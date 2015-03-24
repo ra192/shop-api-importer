@@ -23,17 +23,17 @@ public class ShopApiClient {
 
     public static void createProperty(Property property) {
 
-       create("/property/create.json",property);
+       create("/properties",property);
     }
 
     public static void createCategory(Category category) {
 
-        create("/category/create.json",category);
+        create("/categories",category);
     }
 
     public static void createProduct(Product product) {
 
-        create("/product/create.json",product);
+        create("/products",product);
     }
 
     private static <T> void create(String urlPrefix,T input) {

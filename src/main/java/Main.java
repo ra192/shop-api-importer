@@ -46,22 +46,22 @@ public class Main {
 
     public static void main(String[] args) {
 
-//        properties.forEach(ShopApiClient::createProperty);
-//
-//        ShopApiClient.createCategory(new Category("pc_parts", "Computer parts", null));
-//        ShopApiClient.createCategory(new Category("cpu", "Processors", "pc_parts"));
-//
-//        ShopApiClient.createCategory(new Category("motherboard","Motherboards","pc_parts"));
-//
-//        final CpuPageParser cpuPageParser = new CpuPageParser(techSpecsMap);
-//        cpuPageParser.parsePage("http://hotline.ua/computer/processory/");
-//
-//        for (int i = 1; i <= CPU_PAGE_COUNT; i++) {
-//            cpuPageParser.parsePage("http://hotline.ua/computer/processory/?p=".concat(String.valueOf(i)));
-//        }
+        properties.forEach(ShopApiClient::createProperty);
+
+        ShopApiClient.createCategory(new Category("pc_parts", "Computer parts", null));
+        ShopApiClient.createCategory(new Category("cpu", "Processors", "pc_parts"));
+
+        ShopApiClient.createCategory(new Category("motherboard","Motherboards","pc_parts"));
+
+        final CpuPageParser cpuPageParser = new CpuPageParser(techSpecsMap);
+        cpuPageParser.parsePage("http://hotline.ua/computer/processory/");
+
+        for (int i = 1; i <= CPU_PAGE_COUNT; i++) {
+            cpuPageParser.parsePage("http://hotline.ua/computer/processory/?p=".concat(String.valueOf(i)));
+        }
 
         final MotherboardPageParser motherboardPageParser = new MotherboardPageParser(techSpecsMap);
-//        motherboardPageParser.parsePage("http://hotline.ua/computer/materinskie-platy/");
+        motherboardPageParser.parsePage("http://hotline.ua/computer/materinskie-platy/");
         for (int i=1;i<=MOTHERBOARD_PAGE_COUNT;i++) {
             motherboardPageParser.parsePage("http://hotline.ua/computer/materinskie-platy/?p=".concat(String.valueOf(i)));
         }
